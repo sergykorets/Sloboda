@@ -1,0 +1,12 @@
+<tr>
+  <td><%= link_to book.name, authors_book_path(book) %></td>
+  <td><%= raw book.tags.map { |t| link_to t.name, root_path(category: t.name) }.join(', ') %></td>
+  <td></td>
+  <% if book.published? %>
+  	<td><%= link_to "To draft", unpublish_authors_book_path(book), method: :put, class: 'btn btn-sm btn-primary' %></td>
+  <% else %>
+  	<td><%= link_to "Publish", publish_authors_book_path(book), method: :put, class: 'btn btn-sm btn-success' %></td>
+  <% end %>
+  <td><%= link_to "Edit", edit_authors_book_path(book), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to "Remove", authors_book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>

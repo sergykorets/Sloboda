@@ -1,0 +1,32 @@
+<% provide(:page_title, @book.name) %>
+<% provide(:blog_active, 'active') %>
+
+<% if @book.owner?(current_author) %>
+  <div>
+    <%= link_to "Edit", edit_authors_book_path(@book), class: 'btn btn-sm btn-warning' %>
+    <%= link_to "Remove", authors_book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+    <% if @book.published? %>
+      <%= link_to "To draft", unpublish_authors_book_path(@book), method: :put, class: 'btn btn-sm btn-primary' %>
+    <% else %>
+      <%= link_to "Publish", publish_authors_book_path(@book), method: :put, class: 'btn btn-sm btn-success' %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <% if !@book.image.nil? %>
+      <div class="text-center">
+        <%= image_tag @book.image.url(:medium), class: "book-image" %>
+      </div>
+    <% end %>
+    <hr>
+    <h1 class="text-center"><b><%= @book.name %></b></h1>
+    <hr>
+    <h5 class="publish pull-right"><%= @book.author_name %></h5>
+    <p class="publish"><%= @book.display_day_published %></p>
+    <%= @book.content.html_safe %>
+    <hr>
+  </div>
+</div>
+

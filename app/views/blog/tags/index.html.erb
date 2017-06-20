@@ -1,0 +1,32 @@
+<% provide(:page_title, 'Categories') %>
+<% provide(:categories, 'active') %>
+
+<div>
+  <%= link_to "New category", new_authors_tag_path, class: 'btn btn-sm btn-primary' %>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <%= form_tag blog_tags_path, method: 'get', id: "categories_search" do %>
+      <div class="form-inputs" id="custom-search-input">
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], placeholder: 'Search for category', class: 'form-control input-lg', id: 'searching_categories' %>
+          <span class="input-group-btn">
+            <%= button_tag(type: "submit", class: "btn btn-info btn-lg") do %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div id="categories"><%= render 'table' %></div>
+  </div>
+</div>
+<div class="col-md-8 offset-md-2 apple_pagination">
+  <%= paginate @categories, container: false %>
+</div>

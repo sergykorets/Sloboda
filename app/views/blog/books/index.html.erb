@@ -1,0 +1,10 @@
+<% provide(:page_title, 'Books') %>
+<% provide(:blog_active, 'active') %>
+
+<div class="row">	
+  <%= render @books %>
+</div>
+
+<div class="apple_pagination">
+  <%= paginate @books, container: false %>
+</div>
