@@ -1,25 +1,7 @@
-# README
+To run this app on your local machine do these steps:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. git clone
+2. change file database.yml passing your database credentials
+3. rake db:create && rake db:migrate
+4. rails s - to start server
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# massmedia

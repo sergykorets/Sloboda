@@ -1,4 +1,9 @@
 RailsAdmin.config do |config|
+  config.authorize_with do
+    if current_author.nil? || current_author.admin != true
+      redirect_to main_app.new_author_session_path, alert: 'To have access to panel you need to sign in as admin'
+    end
+  end
 
   ### Popular gems integration
 

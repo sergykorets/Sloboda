@@ -30,7 +30,7 @@ class Book < ApplicationRecord
   validates_presence_of :content
 
   scope :most_recent, -> { order(published_at: :desc) }
-  scope :last_week, -> { where("published_at >= :date", :date => 1.hour.ago) }
+  scope :last_week, -> { where("published_at >= :date", :date => 1.week.ago) }
   scope :published, -> { where(published: true) }
   
 

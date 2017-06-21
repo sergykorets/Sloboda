@@ -4,7 +4,7 @@
       <div class="card-topper"><%= image_tag book.image.url(:thumb) %></div>
     <% end %>
     <div class="card-block">
-    <h6 class="published-date pull-right"><%= book.author_name %></h6>
+    <h6 class="published-date pull-right"><%= book.author.name %></h6>
       <h4 class="card-title"><%= link_to book.name, blog_book_path(book) %></h4>
       <p><%= raw book.tags.map { |t| link_to t.name, root_path(category: t.name) }.join(', ') %></p>
       <h6 class="published-date"><%= book.display_day_published %></h6>

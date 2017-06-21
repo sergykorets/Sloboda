@@ -23,7 +23,7 @@
     <hr>
     <h1 class="text-center"><b><%= @book.name %></b></h1>
     <hr>
-    <h5 class="publish pull-right"><%= @book.author_name %></h5>
+    <p class="publish pull-right"><%= @book.author.name %></p>
     <p class="publish"><%= @book.display_day_published %></p>
     <%= @book.content.html_safe %>
     <hr>
