@@ -15,7 +15,8 @@
 //= require jquery.turbolinks
 //= require selectize
 //= require bootstrap-sprockets
-//= require_tree .
 //= require tinymce-jquery
+//= require_tree .
+
 
 
