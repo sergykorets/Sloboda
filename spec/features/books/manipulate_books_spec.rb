@@ -16,7 +16,7 @@ feature 'Creating a new book' do
     find('#book_content').set('test content')
     
     expect { click_button 'Save' }.to change { Book.count }.by(1)
-    expect(current_path).to eq(authors_post_path(Book.last))
+    expect(current_path).to eq(authors_book_path(Book.last))
 
     visit authors_books_path
     expect(page).to have_content('test title')
@@ -46,7 +46,7 @@ feature 'Creating a new book' do
 
   scenario 'book publish' do
     book = FactoryGirl.create(:book, author: @author)
-    visit authors_posts_path
+    visit authors_books_path
 
     click_link 'Publish'
 
