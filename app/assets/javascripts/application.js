@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require selectize
+//= require tether
 //= require bootstrap-sprockets
 //= require tinymce-jquery
 //= require_tree .

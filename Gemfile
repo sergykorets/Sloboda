@@ -43,6 +43,7 @@ gem "selectize-rails"
 gem 'tinymce-rails'
 gem 'rails_admin', '~> 1.2'
 gem 'rails-controller-testing'
+gem 'tether-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
